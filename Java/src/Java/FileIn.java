@@ -1,17 +1,13 @@
 package Java;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Scanner;
-public class JavaP {
-	public static int getNum(String msg,Scanner scan) {
-		System.out.print(msg);
-		String input = scan.nextLine();
-		return Integer.parseInt(input);
-	}
+
+public class FileIn {
+
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-        Member[] list = new Member[30];
+		Member[] list = new Member[30];
 		
 		int index = 0;
 		
@@ -33,12 +29,6 @@ public class JavaP {
 			}
 		}
 		System.out.println("index = " + index);
-		
-		
-		for(int i = 0; i<index;i++) {
-			list[i].pGrade();
-			
-		}
 	}
 
 }
