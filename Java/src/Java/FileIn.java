@@ -4,12 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-public class FileIn {
+public class FileIn implements Runnable{
 
-	public static void main(String[] args) {
+	public void FileIn() {
 		Member[] list = new Member[30];
 		
-		int index = 0;
+		int count = 0;
 		
 		try (FileInputStream fis = new FileInputStream("c:\\temp\\student.dat");
 				ObjectInputStream ois = new ObjectInputStream(fis)){
@@ -21,14 +21,18 @@ public class FileIn {
 		}catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
 		for(Member member: list) {
 			if(member != null) {
 				System.out.println(member);
-				++index;
+				++count;
 			}
 		}
-		System.out.println("index = " + index);
+		System.out.println("index = " + count);
+		
 	}
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	};
 
 }

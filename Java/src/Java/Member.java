@@ -1,31 +1,28 @@
 package Java;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Member implements Serializable{
 	String name;
-	int grade;
-	String addr;
+	String ssn;
 	String tel;
+	int balance;
 	
-	public Member() {};
-	
-	
+	public Member() {}
+
 	@Override
 	public String toString() {
-		return "Member [name=" + name + ", grade=" + grade + ", addr=" + addr + ", tel=" + tel + "]";
+		return "Member [name=" + name + ", ssn=" + ssn + ", tel=" + tel + ", balance=" + balance + "]";
 	}
 
-
-	public Member(String name, int grade, String addr, String tel) {
+	public Member(String name, String ssn, String tel) {
 		super();
-		this.name =name;
-		this.grade = grade;
-		this.addr = addr;
+		this.name = name;
+		this.ssn = ssn;
 		this.tel = tel;
-	}
-	public void pGrade() {
-		System.out.println("학생의 학년: " + grade);
-	}
-
+	};
+	
+	
 }
