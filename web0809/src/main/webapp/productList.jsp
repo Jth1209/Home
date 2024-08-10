@@ -26,8 +26,8 @@
                 <td>${product.stock}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/products/${product.id}">View</a>
-                    <a href="${pageContext.request.contextPath}/products/edit/${product.id}">Edit</a>
-                    <a href="${pageContext.request.contextPath}/products/delete/${product.id}">Delete</a>
+                    <a href="${pageContext.request.contextPath}/UpdateInfo.jsp?update=${product.id}">Edit</a>
+                    <a href="${pageContext.request.contextPath}/delete.jsp?delete=${product.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

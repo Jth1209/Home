@@ -10,4 +10,4 @@
 	request.setAttribute("dto", dto);
 %>
 
-<jsp:forward page="updteView.jsp"></jsp:forward>
+<jsp:forward page="updateView.jsp"></jsp:forward>

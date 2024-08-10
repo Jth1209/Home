@@ -40,6 +40,6 @@ public class ProductDAO {
 	}
 
 	public void deleteProduct(int id) {
-		session.delete("ProductMapper.updateProduct",id);
+		session.delete("ProductMapper.deleteProduct",id);
 	}
 }
