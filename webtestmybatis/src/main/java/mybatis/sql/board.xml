@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="B">
+	<select id="searchUser" resultType="List">
+		select * from board;
+	</select>
+	<select id="viewContent" parameterType="int" resultType="List.ListDTO">
+		select * from board where num=#{num};
+	</select>
+	<update id="updateUser" parameterType="Login.LoginDTO">
+		update member set pw=#{dto.pw}, name=#{dto.name} where id=#{dto.id};
+	</update>
+	<update id="updateHits" parameterType="int">
+		update board set hits = hits + 1 where num = #{num};
+	</update>
+	<delete id="deleteUser" parameterType="string">
+		delete from board where num=#{num};
+	</delete>
+</mapper>
