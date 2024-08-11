@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+    <select id="selectAll" resultType="board.boardDTO">
+        SELECT * FROM board
+    </select>
+
+    <select id="selectBoard" parameterType="int" resultType="board.boardDTO">
+        SELECT * FROM board WHERE num=#{num}
+    </select>
+
+    <insert id="insertBoard" parameterType="board.boardDTO">
+        INSERT INTO board (num,writer,title,content,regtime,hits)
+        VALUES (AUTO.nextval,#{writer},#{title},#{content},to_char(sysdate,'YYYY-MM-DD'),0)
+    </insert>
+
+    <update id="updateBoard" parameterType="board.boardDTO">
+        UPDATE board
+        SET writer=#{writer},title=#{title},content=#{content},regtime=to_char(sysdate,'YYYY-MM-DD'),hits=0
+        WHERE num=#{num}
+    </update>
+    
+    <update id="updateHits" parameterType="int">
+    	UPDATE board
+    	SET hits=hits+1
+    	WHERE num=#{num}
+    </update>
+
+    <delete id="deleteBoard" parameterType="int">
+        DELETE FROM board WHERE num=#{num}
+    </delete>
+</mapper>

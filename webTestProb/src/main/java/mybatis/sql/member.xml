@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+    <select id="searchUser" parameterType="member.memberDTO" resultType="int">
+        SELECT count(*) FROM member where id=#{id} and pw=#{pw}
+    </select>
+
+    <select id="searchInfo" parameterType="string" resultType="member.memberDTO">
+        SELECT * FROM member WHERE id=#{id}
+    </select>
+
+    <insert id="insertUser" parameterType="member.memberDTO">
+        INSERT INTO member (id,pw,name)
+        VALUES (#{id},#{pw},#{name})
+    </insert>
+
+    <update id="updateUser" parameterType="member.memberDTO">
+        UPDATE member
+        SET pw=#{pw},name=#{name}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="string">
+        DELETE FROM member WHERE id=#{id}
+    </delete>
+</mapper>
