@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-	memberDTO dto= (memberDTO) request.getAttribute("uname");
+	memberDTO dto= (memberDTO) session.getAttribute("uname");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,7 +33,7 @@
 
             <ul class="util">
             <%
-            	if(request.getAttribute("uname") != null){
+            	if(session.getAttribute("uname") != null){
             		session.setAttribute("login", dto.getName());
             %>
             	<li><a href=#>${uname.getName() }님</a></li>

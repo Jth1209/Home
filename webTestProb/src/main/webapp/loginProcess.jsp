@@ -13,7 +13,7 @@
 	
 	if(dao.searchUser(dto) == 1){
 		memberDTO name = dao.searchInfo(id);
-		request.setAttribute("uname", name);
+		session.setAttribute("uname", name);
 %>
 	<jsp:forward page="index.jsp"></jsp:forward>
 <%	

@@ -27,7 +27,7 @@
 <body>
     <header>
         <div class="inner">
-            <h1><a href="#">SK 하이닉스</a></h1>
+            <h1><a href="index.jsp">SK 하이닉스</a></h1>
 
             <ul id="gnb">
                 <li><a href="https://namu.wiki/w/SK">소개</a></li>
