@@ -75,5 +75,15 @@
 				type="button" value="취소" onclick="history.back()" class="btn btn-outline-danger">
 		</form>
 	</div>
+	<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Family Site</a></li>
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Instagram</a></li>
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Vmap</a></li>
+                </ul> 
+                <p class="col-md-4 mb-0 text-muted">
+                    2024 æspa &copy; copyright all right reserved.
+                </p>
+    </footer>
 </body>
 </html>

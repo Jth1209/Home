@@ -1,9 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-	<style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<style>
 		section {
             font-family: Arial, sans-serif;
             display: flex;
@@ -12,48 +24,8 @@
             height: 100vh;
             
         }
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .login-container h2 {
-        	text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>æspa</title>
-    <link rel="icon" href="logo.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/ie.js"></script>
-    <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
+</style>
 </head>
-
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -102,18 +74,60 @@
     </div>
   </div>
 </nav>
-    <section>
-        <div class="login-container">
-	        <h2>로그인</h2>
-	        <form action="loginProcess" method="post">
-	            <input type="text" name="username" placeholder="Username" required>
-	            <input type="password" name="password" placeholder="Password" required>
-	            <button type="submit">로그인</button>
-	        </form>
-	    </div>
-    </section>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<section>
+	<div class="container" style="padding-top: 50;">
+	<div class="input-group mb-3">	
+		<form action="add" enctype="multipart/form-data"
+			method="post">
+			<br>
+			<input type="file" class="form-control" name="upload"><br>
+			<input type="submit" class="input-group-text" value="업로드">
+		</form>
+	</div>	
+		<br>
 
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		<table class="table table-bordered table-hover">
+				<tr>
+					<th>파일명</th>
+					<th>업로드 시간</th>
+					<th>크기</th>
+					<th>삭제</th>
+				</tr>
+
+				<c:forEach var="files" items="${fileList}">
+					<tr>
+						<td class="left"><a href="files/${files.fname }">
+								${files.fname } </a></td>
+						<td>${files.ftime }</td>
+						<td class="right">${files.fsize }&nbsp;&nbsp;</td>
+						<td><a href="deleteF?num=${files.num }">X</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<c:forEach var="pgn" items="${pgnList}">
+						<li class="page-item"><a class="page-link"
+							href="files?page=${pgn.pageNo}"> <c:choose>
+									<c:when test="${pgn.curPage}">
+										<u>${pgn.display}</u>
+									</c:when>
+									<c:otherwise>
+										${pgn.display}
+									</c:otherwise>
+								</c:choose>
+						</a></li>
+					</c:forEach>
+				</ul>
+			</nav>
+	</div>
+	</section>
+	<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
                 <ul class="nav col-md-4 justify-content-end">
                     <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Family Site</a></li>
                     <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Instagram</a></li>
@@ -123,5 +137,6 @@
                     2024 æspa &copy; copyright all right reserved.
                 </p>
     </footer>
+
 </body>
 </html>

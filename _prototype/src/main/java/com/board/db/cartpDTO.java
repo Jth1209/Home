@@ -5,11 +5,11 @@ public class cartpDTO {
 	private int product_id;
 	private String name;
 	private String description;
-	private int price;
+	private double price;
 	private int stock;
 	private int quantity;
 	
-	public cartpDTO(int id, int product_id, String name, String description, int price, int stock, int quantity) {
+	public cartpDTO(int id, int product_id, String name, String description, double price, int stock, int quantity) {
 		super();
 		this.id = id;
 		this.product_id = product_id;
@@ -53,11 +53,11 @@ public class cartpDTO {
 		this.description = description;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

@@ -7,31 +7,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="sk.ico" type="image/x-icon">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">홈페이지</a>
+    <a class="navbar-brand" href="index">홈페이지</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="list">게시판</a>
+          <a class="nav-link active" aria-current="page" href="check?identify=1">게시판</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">자료실</a>
+          <a class="nav-link" href="check?identify=2">자료실</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="shop">쇼핑몰</a>
+          <a class="nav-link" href="check?identify=3">쇼핑몰</a>
         </li>
         <li class="nav-item dropdown">
         <%
@@ -67,41 +69,8 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-	
-    <header>
-        <div class="inner">
-            <h1><a href="index.jsp">æspa</a></h1>
-
-            <ul id="gnb">
-                <li><a href="https://www.smentertainment.com/en/">DEPARTMENT</a></li>
-                <li><a href="https://blip.kr/artists/aespa/gallery">GALLERY</a></li>
-                <li><a href="https://www.youtube.com/@aespa">YOUTUBE</a></li>
-                <li><a href="/list">COMMUNITY</a></li>
-                <li><a href="S_shops.jsp">GOODS</a></li>
-            </ul>
-
-            <ul class="util">
-            <%
-                if(session.getAttribute("uname") != null){
-            %>
-            	<li><a href="#">${uname }님</a></li>
-                <li><a href="L_logout.jsp">Logout</a></li>
-                <li><a href="L_update.jsp">회원정보수정</a></li>
-            <%
-            	}else{	
-            %>		
-                <li><a href="L_login.jsp">Login</a></li>
-                <li><a href="L_join.jsp">Join</a></li>
-            <% 		
-            	}
-            %>
-            </ul>
-        </div>
-    </header>
-
-
     <figure>
-        <video src="img/aespaLogo.mp4" autoplay muted loop></video>
+        <video src="img/visual.mp4" autoplay muted loop></video>
         <div class="inner">
             <h1>æspa</h1>
             <p>SM entertainment 소속 아티스트 aespa <br>
@@ -150,25 +119,15 @@
         </div>
     </section>
 
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>æspa</h1>
-                <ul>
-                    <li><a href="https://m.cafe.daum.net/dafdgds/_rec">Family Site</a></li>
-                </ul>
-            </div>
-
-            <div class="lower">
-                <address>
-                    컴퓨터 소프트웨어학과 장태호<br>
-                    TEL : 031-111-1234 C.P : 010-1234-5678
-                </address>
-                <p>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Family Site</a></li>
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Instagram</a></li>
+                    <li class="nav-item"><a href="https://m.cafe.daum.net/dafdgds/_rec" class="nav-link px-2 text-muted">Vmap</a></li>
+                </ul> 
+                <p class="col-md-4 mb-0 text-muted">
                     2024 æspa &copy; copyright all right reserved.
                 </p>
-            </div>
-        </div>
     </footer>
 </body>
 </html>
