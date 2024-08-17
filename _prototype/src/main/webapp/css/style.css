@@ -15,7 +15,8 @@ a {
 /* header */
 header {
 	width: 100%;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	background:#d2d2ff;
 }
 header .inner {
 	width: 1180px;
@@ -39,6 +40,7 @@ header .inner .util {
 }
 header .inner .util li {
 	float: left;
+
 }
 header .inner .util li a {
 	display: block;
@@ -116,6 +118,12 @@ figure .inner a:hover {
 section {
 	width: 100%;
 	padding: 200px 0px;
+	background:#ececff;
+	font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 section .inner {
 	width: 1180px;
@@ -150,7 +158,11 @@ section .inner .wrap article h2 {
 }
 section .inner .wrap article h2 a {
 	font: bold 16px/1 "arial";
-	color: #555;
+	color: #000;
+}
+section .inner .wrap article h2 a:hover {
+	font: bold 16px/1 "arial";
+	color: #6a5acd;
 }
 section .inner .wrap article p {
 	font: 14px/1.4 "arial";
@@ -169,6 +181,67 @@ section .inner .wrap article .pic img {
 	width: 100%;
 	height: 100%;
 }
+ .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+        	text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+         .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
 /* footer */
 footer {
 	width: 100%;
