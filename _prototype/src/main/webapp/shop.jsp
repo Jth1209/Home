@@ -17,7 +17,7 @@
 	crossorigin="anonymous">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>홈페이지</title>
-<link rel="icon" href="sk.ico?after" type="image/x-icon">
+<link rel="icon" href="img/aespa.ico?after" type="image/x-icon">
 <link rel="stylesheet" href="css/style2.css?after">
 <script src="js/ie.js"></script>
 </head>
