@@ -22,5 +22,10 @@
 		<mapper resource="mybatis/sql/member.xml" />
 		<mapper resource="mybatis/sql/product.xml" />
 		<mapper resource="mybatis/sql/file.xml" />
+		<mapper class="com.board.db.BoardMapper"/>
+		<mapper class="com.board.db.CartMapper"/>
+		<mapper class="com.board.db.ProductsMapper"/>
+		<mapper class="com.board.db.LoginMapper"/>
+		<mapper class="com.board.db.FileMapper"/>
 	</mappers>
 </configuration>

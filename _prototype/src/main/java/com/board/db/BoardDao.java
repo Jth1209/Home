@@ -55,4 +55,10 @@ public class BoardDao {
     public void deleteOne(int num) {
     	session.delete("Board.deleteBoard",num);
     }
+    
+    /*public void dummy() {
+    	BoardMapper bm = session.getMapper(BoardMapper.class);
+    	bm.methods();
+    	Mapper 인터페이스를 활용한 데이터베이스 쿼리 사용법
+    }*/
 }
